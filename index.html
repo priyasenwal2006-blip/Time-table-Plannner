@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Timetable Planner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>University Timetable Planner</h1>
+      <p class="subtitle">Enter class details for the week — the system will generate the timetable automatically.</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <div class="panel-header">
+          <h2>1. Enter Required Info</h2>
+        </div>
+
+        <form id="planner-form">
+          <div class="field">
+            <label for="batch-select">Batch</label>
+            <select id="batch-select" required></select>
+          </div>
+
+          <div class="class-list-header">
+            <span>Subject</span>
+            <span>Teacher</span>
+            <span>Room</span>
+            <span></span>
+          </div>
+
+          <div id="class-list"></div>
+
+          <div class="actions">
+            <button type="button" id="add-class-btn" class="btn secondary">+ Add Class</button>
+            <button type="submit" id="generate-btn" class="btn primary">Generate Timetable</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel hidden" id="result-panel">
+        <div class="panel-header">
+          <h2>2. Generated Timetable</h2>
+          <span class="badge" id="grid-badge">6 days × 4 slots</span>
+        </div>
+        <p id="status-msg" class="status-msg"></p>
+        <div id="timetable" class="timetable-wrap"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
